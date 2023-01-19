@@ -1,0 +1,30 @@
+dependencies:
+  - smartcontractkit/chainlink-brownie-contracts@0.2.1
+  - OpenZeppelin/openzeppelin-contracts@4.8.1
+  
+
+compiler:
+  solc:
+    remappings:
+      - '@chainlink=smartcontractkit/chainlink-brownie-contracts@0.2.1'
+      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.8.1'
+      
+dotenv: .env
+networks:
+  development: 
+    keyhash: '0x79d3d8832d904592c0bf9818b621522c988bb8b0c05cdc3b15aea1b6e8db0c15'
+    fee: 100000000000000000
+  goerli:
+    keyhash: '0x79d3d8832d904592c0bf9818b621522c988bb8b0c05cdc3b15aea1b6e8db0c15'
+    eth_usd_price_feed : '0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e'
+    verify: True
+    vrf_coordinator: '0x2Ca8E0C643bDe4C2E08ab1fA0da3401AdAD7734D'
+    link_token: '0x326C977E6efc84E512bB9C30f76E30c160eD06FB'
+    fee: 100000000000000000
+
+  mainnet-fork:
+    eth_usd_price_feed: '0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419'
+settings:
+  gas_limit: "100000000000"
+wallets:
+  from_key: ${mySignature}
